@@ -2,3 +2,11 @@
     width: 60%;
     margin: 50px auto;
 }
+div.ant-row.gutter-row{
+    width: 20px;
+}
+.gutter-row-item{
+    width: 24px;
+    text-align: center;
+    border: 1px solid #e0dede;
+}

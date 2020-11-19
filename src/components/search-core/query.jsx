@@ -5,7 +5,7 @@ import {api} from '../../apis/api-urls'
 
 import 'antd/dist/antd.css';
 
-import '../../App.css'
+
 import Show from "./show";
 const { Search } = Input;
 
