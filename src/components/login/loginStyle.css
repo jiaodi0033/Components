@@ -1,0 +1,21 @@
+.ant-layout{
+    min-height: 100vh;
+    background-image: url("http://qty83k.creatby.com/materials/origin/15990370789f1bb36e4522c973e0ce0b_origin.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.ant-form{
+    margin:10% 20%;
+}
+.ant-input ,.ant-btn-primary,.ant-input-affix-wrapper{
+    /*border-radius: 20px;*/
+}
+.ant-col .ant-col-16 .ant-form-item-control{
+    border-radius: 30%;
+}
+@media (max-width: 575px) {
+    .ant-col-offset-8{
+        margin-left:0 ;
+    }
+}
+

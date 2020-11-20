@@ -1,6 +1,12 @@
 .container{
     width: 60%;
     margin: 50px auto;
+    background: #fff;
+    min-height: 400px;
+}
+.site-layout{
+    min-height: 100vh;
+    background: #cbc7c7;
 }
 div.ant-row.gutter-row{
     width: 20px;
@@ -9,4 +15,17 @@ div.ant-row.gutter-row{
     width: 24px;
     text-align: center;
     border: 1px solid #e0dede;
+}
+.logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+.ant-form-item{
+    width: 80% !important;
+}
+.ant-form{
+    padding: 12px 0 !important;
 }
