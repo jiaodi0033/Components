@@ -18,6 +18,11 @@ const menu = (
 
 class Test extends React.Component {
 
+    handleClick=()=>{
+        const {handleClick}=this.props
+        handleClick()
+    }
+
     render() {
         return (
             <Layout>
@@ -27,17 +32,7 @@ class Test extends React.Component {
                 </Header>
                 <Content  className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
                     <div className="container site-layout-background">
-                        <MyInput/>
-                        <Button type="primary" block  >Primary Button</Button>
-
-
-                        <Tooltip title="search">
-                            <Button type="primary" shape="circle" icon={<SearchOutlined />} />
-                        </Tooltip>
-
-                        <Button type="primary" icon={<SearchOutlined />}>
-                            Search
-                        </Button>
+                        <Button type="primary" onClick={this.handleClick} >退出</Button>
 
                         <Dropdown overlay={menu} placement="bottomCenter">
                             <Button>bottomCenter</Button>

@@ -1,12 +1,10 @@
+
+
 import React from 'react'
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserOutlined,LockOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import { createBrowserHistory } from "history";
 
-import './loginStyle.css'
-
-const history = createBrowserHistory();
 
 const layout = {
     labelCol: {
@@ -24,11 +22,9 @@ const tailLayout = {
 };
 
 
-class Login extends React.Component {
+class Register extends React.Component {
 
-    handleRegister=()=>{
-        history.push('/register');
-    }
+
     onFinish = (values) => {
         // console.log('Success:', values);
         const {handleClick}=this.props;
@@ -45,9 +41,9 @@ class Login extends React.Component {
         )
 
     };
-    // onFinishFailed = (errorInfo) => {
-    //     console.log('Failed:', errorInfo);
-    // };
+    onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
     render() {
 
 
@@ -88,25 +84,16 @@ class Login extends React.Component {
                         <Input.Password placeholder="Password" prefix={<LockOutlined />}/>
                     </Form.Item>
 
-                    <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
                     <Form.Item {...tailLayout}>
-                        <Button type="primary" htmlType="submit" block ghost onClick={this.handleRegister} >
-                            SINGUP
-                        </Button>
                         <Button type="primary" htmlType="submit" block ghost >
-                            LOGIN
+                            SIGNUP
                         </Button>
                     </Form.Item>
-
                 </Form>
-
             </div>
 
         )
     }
 }
 
-export default Login;
+export default Register;
