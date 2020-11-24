@@ -1,9 +1,10 @@
 const proxy = require('http-proxy-middleware');
-module.exports = function(app) {
+
+module.exports = app => {
     app.use(
         '/api',
         proxy.createProxyMiddleware({
-            target: 'https://tcc.taobao.com/',
+            target: 'http://localhost:8888/',
             changeOrigin: true,
         })
     );

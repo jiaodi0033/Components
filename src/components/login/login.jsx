@@ -1,5 +1,7 @@
 import React from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
+import {withRouter} from 'react-router-dom'
+
 import { UserOutlined,LockOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { createBrowserHistory } from "history";
@@ -93,7 +95,7 @@ class Login extends React.Component {
                     </Form.Item>
 
                     <Form.Item {...tailLayout}>
-                        <Button type="primary" htmlType="submit" block ghost onClick={this.handleRegister} >
+                        <Button type="primary" htmlType="submit" block ghost onClick={()=>history.push('/register')} >
                             SINGUP
                         </Button>
                         <Button type="primary" htmlType="submit" block ghost >
@@ -109,4 +111,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

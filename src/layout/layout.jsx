@@ -1,11 +1,12 @@
 import React from 'react';
 import {Layout} from "antd";
-import {BrowserRouter as Router,Route,BrowserHistory,Redirect} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Redirect} from 'react-router-dom'
 import { createBrowserHistory } from "history";
 
 
 import './layoutStyle.css';
 import Login from "../components/login/login";
+
 import Test from "../test";
 import Register from "../components/register/register";
 
