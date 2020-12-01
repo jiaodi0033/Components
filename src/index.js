@@ -5,12 +5,21 @@ import decode from 'jwt-decode';
 
 import store from './store'
 import MyApp from "./MyApp";
-import { syncStateInfoAc } from './pages/login/store'
+import { syncStateInfoAc } from './pages/login/store/actionCreators'
 
 const tk = localStorage.getItem('@Token');
+console.log('token',tk);
 //解析token并同步到redux
 
-// if (tk) store.dispatch(syncStateInfoAc(decode(tk)));
+if (tk) {
+    try{
+        store.dispatch(syncStateInfoAc(decode(tk)));
+    }catch (err) {
+        localStorage.removeItem('@Token');
+        window.location.href = './login';
+    }
+
+}
 
 ReactDOM.render(
     <Provider store={store}>
@@ -19,5 +28,3 @@ ReactDOM.render(
     ,
   document.getElementById('root')
 );
-
-

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 
 
@@ -19,22 +20,45 @@ class Navigator extends React.Component {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/register">
-                                Sign up
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Sign in</Link>
-                        </li>
+                    {
+                        this.props.loginData.isAuth
+                        ?(<ul className="navbar-nav mr-auto">
+                                <li className="nav-item active">
+                                    <Link className="nav-link" to="/personal">
+                                        Personal
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/logout">Logout</Link>
+                                </li>
 
-                    </ul>
+                            </ul>)
+                        :   (<ul className="navbar-nav mr-auto">
+                            <li className="nav-item active">
+                                <Link className="nav-link" to="/register">
+                                    Sign up
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/login">Sign in</Link>
+                            </li>
+
+                        </ul>)
+                    }
+
 
                 </div>
             </nav>
         )
     }
 }
+const mapStateToProps= state =>{
+    return {
+        loginData:state.login
+    }
+}
+const mapDispatchToProps = dispatch =>{
+    return { }
+}
 
-export default Navigator;
+export default connect(mapStateToProps,mapDispatchToProps)(Navigator);

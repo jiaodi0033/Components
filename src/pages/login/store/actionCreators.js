@@ -12,4 +12,10 @@ export const syncStateInfoAc = data =>{
         type:actionTypes.SYNC_STATE_INFO,
         payload:data
     };
+};
+export const logout = data =>{
+    return dispatch =>{
+        localStorage.removeItem('@Token');
+        dispatch(syncStateInfoAc({}))
+    }
 }

@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
         // console.log('data',data);
         this.props.flashFn.addFlashAc({
             type:"alert-danger",
-            text:'登录失败',
+            text:'密码错误，请重新输入',
             id:shortid.generate()
         });
     };
